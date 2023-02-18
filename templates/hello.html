@@ -1,13 +1,10 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Main page{% endblock %}</h1>
+  <h1>{% block title %}View Message{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
-{% if name %}
-   Hello, {{name}}!
-{% else %}   
-  Hello there!
-{% endif %}
+Here is the message: 
+{{msgs}}
 {% endblock %}

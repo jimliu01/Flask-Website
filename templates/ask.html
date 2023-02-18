@@ -1,28 +1,24 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Ask{% endblock %}</h1>
+  <h1>{% block title %}Submit{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
   <form method="post">
       <label for="name">What would you like us to call you?</label>
-      <input name="name" id="name">
       <br>
-      <label for="pic16b">Are you in PIC16B?</label>
-      <input type="radio" name="student" id="yes" value="yes">
-      <label for="yes">Yes</label>
-      <input type="radio" name="student" id="no" value="no">
-      <label for="No">No</label>
+      <input type="text" name="name" id="name">
+      <br>
+      <label for="message">What would you like to store in the message bank?</label>
+      <br>
+      <input type="text" name="message" id="message">
       <br>
       <input type="submit" value="Submit form">
   </form>
   {% if name %}
   <br>
-  {% if student == "yes" %}
-  <b>Hello {{name}}!  Do you like PIC16B?</b>
-  {% else %}
-  <b>Hello {{name}}!  Do you want to take PIC16B?</b>
-  {% endif %}
+  <b>Hello {{name}}! Your message of "{{message}}" has been received.</b>
+  <b>Thank you so much for your submission!</b>
   {% endif %}
 {% endblock %}
